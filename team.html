@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Fest Team - YUVA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: #000;
+            min-height: 100vh;
+        }
+
+        /* Navigation Styles */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+
+        .nav-desktop {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
+            padding: 1rem 2.5rem 1rem 1rem;
+        }
+
+        .nav-link {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-mobile {
+            display: none;
+            justify-content: flex-end;
+            padding: 1rem 2.5rem 1rem 1rem;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.95);
+            min-width: 200px;
+            display: none;
+            flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #9CA3AF;
+            text-decoration: none;
+            border-bottom: 1px solid #374151;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: white;
+            background-color: rgba(55, 65, 81, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+
+            .nav-mobile {
+                display: flex;
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem;
+            padding-top: 6rem;
+        }
+
+        /* Section Styles */
+        .team-section {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Photo Grid Styles */
+        .photo-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .organizers-grid {
+            grid-template-columns: repeat(auto-fit, 350px);
+        }
+
+        .developers-grid {
+            grid-template-columns: 1fr;
+        }
+
+        /* Photo Item Styles */
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            width: 350px;
+            height: 450px;
+            margin: 0 auto;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1.5rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover .photo-overlay {
+            transform: translateY(0);
+        }
+
+        .photo-overlay h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .photo-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .photo-item {
+                width: 300px;
+                height: 400px;
+            }
+
+            .organizers-grid,
+            .developers-grid {
+                grid-template-columns: repeat(auto-fit, 300px);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-item {
+                width: 250px;
+                height: 350px;
+            }
+
+            .organizers-grid,
+            .developers-grid {
+                grid-template-columns: repeat(auto-fit, 250px);
+            }
+
+            .photo-overlay {
+                padding: 1rem 0.5rem 0.5rem;
+            }
+
+            .photo-overlay h3 {
+                font-size: 0.9rem;
+            }
+
+            .photo-overlay p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-desktop">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="#" onclick="alert('Coming Soon'); return false;" class="nav-link">Login</a>
+        </div>
+        
+        <div class="nav-mobile">
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="#" onclick="alert('Coming Soon'); return false;">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Organizers Section -->
+        <section class="team-section organizers">
+            <h2 class="section-title">Organizers</h2>
+            <div class="photo-grid organizers-grid">
+                <div class="photo-item">
+                    <img src="public/Team/Harish.jpg" alt="Harish">
+                    <div class="photo-overlay"><h3>Harish</h3></div>
+                </div>
+                <div class="photo-item">
+                    <img src="public/Team/agarshana.jpg" alt="Agarshana">
+                    <div class="photo-overlay"><h3>Agarshana</h3></div>
+                </div>
+                <div class="photo-item">
+                    <img src="public/Team/ravi.jpg" alt="Ravi">
+                    <div class="photo-overlay"><h3>Ravi</h3></div>
+                </div>
+                <div class="photo-item">
+                    <img src="public/Team/Shakthi.jpg" alt="Shakthivel">
+                    <div class="photo-overlay"><h3>Shakthivel</h3></div>
+                </div>
+                <div class="photo-item">
+                    <img src="public/Team/Vaishnavi.jpg" alt="Vaishnaavi">
+                    <div class="photo-overlay"><h3>Vaishnaavi</h3><p>Role</p></div>
+                </div>
+                <div class="photo-item">
+                    <img src="public/Team/vaishak.jpg" alt="Vaishak">
+                    <div class="photo-overlay"><h3>Vaishak</h3><p>Role</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developers Section -->
+        <section class="team-section developers">
+            <h2 class="section-title">Web Developers</h2>
+            <div class="photo-grid developers-grid">
+                <div class="photo-item">
+                    <img src="public/Team/Web devs.jpg" alt="Developer">
+                    <div class="photo-overlay">
+                        <h3>Developer Name</h3>
+                        <p>Web Development</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 YUVA Tech Fest Team. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navbar');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (!nav.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

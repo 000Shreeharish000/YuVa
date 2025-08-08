@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paper Presentation – YUVA Tech Fest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 45%;
+      width: 55%;
+      background-color: #0a0a0a;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      border-bottom: 1px solid #333;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #ef4444;
+    }
+
+    /* Split Layout */
+    .split-container {
+      display: flex;
+      min-height: 100vh;
+      margin-top: 60px; /* Offset for navbar */
+    }
+
+    .poster-section {
+      width: 45%;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      /* background: #2d1b69; */
+      background: #0a0a0a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .poster-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .content-section {
+      width: 55%;
+      margin-left: 45%;
+      min-height: 100vh;
+      background: #0a0a0a;
+      overflow-y: auto;
+      padding: 2rem;
+      scroll-behavior: smooth;
+    }
+
+    .content-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header.hackathon-header {
+      margin-bottom: 3rem;
+    }
+
+    .hackathon-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      font-family: 'Times New Roman', serif;
+    }
+
+    .hackathon-subtitle {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #94a3b8;
+      font-family: 'Times New Roman', serif;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #ef4444;
+      font-family: 'Times New Roman', serif;
+      margin-bottom: 1rem;
+    }
+
+    .content-box {
+      margin-bottom: 2rem;
+    }
+
+    .content-box p, .content-box ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #fff;
+      font-family: 'Times New Roman', serif;
+    }
+
+    .content-box h4 {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-family: 'Times New Roman', serif;
+    }
+
+    .content-box ul {
+      margin-left: 1.5rem;
+    }
+
+    /* CTA */
+    .cta-card {
+      background: #1e1e1e;
+      padding: 2rem;
+      text-align: center;
+      border: 2px solid #333;
+      margin-bottom: 3rem;
+    }
+
+    .cta-card h3 {
+      color: #ef4444;
+      font-size: 1.8rem;
+      font-family: 'Times New Roman', serif;
+      margin-bottom: 1rem;
+    }
+
+    .cta-card p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .register-btn {
+      background: #ef4444;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .register-btn:hover {
+      background: #dc2626;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+    }
+
+    section:not(:last-child)::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: repeating-linear-gradient(to right, #666 0, #666 4px, transparent 4px, transparent 8px);
+      margin: 2rem 0;
+    }
+
+    /* Scrollbar */
+    .content-section::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .content-section::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    .content-section::-webkit-scrollbar-thumb {
+      background: #ef4444;
+      border-radius: 4px;
+    }
+
+    .content-section::-webkit-scrollbar-thumb:hover {
+      background: #dc2626;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        position: static;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        left: 0;
+      }
+
+      .split-container {
+        flex-direction: column;
+      }
+
+      .poster-section {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .content-section {
+        width: 100%;
+        margin-left: 0;
+        padding: 1rem;
+      }
+
+      .hackathon-title {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="index.html#about" class="nav-link">About</a>
+    <a href="#" class="nav-link" onclick="alert('Coming Soon')">Events</a>
+    <a href="paper_presentation.html" class="nav-link">Paper Presentation</a>
+    <a href="hackathon.html" class="nav-link">Hackathon</a>
+    <a href="#" class="nav-link" onclick="alert('Coming Soon')">Team</a>
+    <a href="#" class="nav-link" onclick="alert('Coming Soon')">Gallery</a>
+    <a href="#" class="nav-link" onclick="alert('Coming Soon')">Login</a>
+  </nav>
+
+  <!-- Split Layout -->
+  <div class="split-container">
+
+    <!-- Left: Poster -->
+    <div class="poster-section">
+      <img src="public/paperposter.jpeg" alt="Paper Presentation Poster" class="poster-image"/>
+    </div>
+
+    <!-- Right: Content -->
+    <div class="content-section">
+      <div class="content-wrapper">
+
+        <!-- Header -->
+        <header class="hackathon-header">
+          <h2 class="hackathon-title">YUVA Paper Presentation 2025</h2>
+          <p class="hackathon-subtitle">Present your research at the national level</p>
+        </header>
+
+        <!-- CTA -->
+        <section>
+          <div class="cta-card">
+            <h3>Ready to Present?</h3>
+            <p>Register now and be part of the most exciting Paper presentation of 2025!</p>
+            <a class="register-btn" href="https://forms.gle/sBtBT8QwWnCv7xw87" target="_blank" rel="noopener noreferrer">Register Now</a>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+          <h3 class="section-title">About</h3>
+          <div class="content-box">
+            <p>
+              National Level Paper Presentation on September 16, 2025, hosted by SRM IST on the 6th Floor as a hybrid conference (both online and onsite participation available).
+              Topics of interest include Quantum Computing, ML in Mechanics, Advancements in Biotechnology, Advancements in Electricals, AI and Ethical Automation, Cybersecurity, Big Data and Predictive Analytics, General Science, and more.
+            </p>
+          </div>
+        </section>
+
+        <!-- Structure -->
+        <section>
+          <h3 class="section-title">Structure</h3>
+          <div class="content-box">
+            <h4>Round 1 – Paper Submission:</h4>
+            <p>Participants submit their research papers before the deadline.</p>
+            <h4>Round 2 – Shortlisting & Payment:</h4>
+            <p>Shortlisted participants will receive an official email and must pay the registration fee to confirm participation.</p>
+            <h4>Round 3 – Hybrid Presentation:</h4>
+            <p>Finalists will present their papers remotely or onsite on conference day.</p>
+          </div>
+        </section>
+
+        <!-- Timeline -->
+        <section>
+          <h3 class="section-title">Timeline</h3>
+          <div class="content-box">
+            <p><strong style="color: #2d5016;">Paper Submission Deadline:</strong> August 30, 2025</p>
+            <p><strong style="color: #2d5016;">Shortlisted Announcement:</strong> September 5, 2025</p>
+            <p><strong style="color: #2d5016;">Final Presentation & Conference Day:</strong> September 16, 2025</p>
+          </div>
+        </section>
+
+        <!-- Rules -->
+        <section>
+          <h3 class="section-title">Rules</h3>
+          <div class="content-box">
+            <ul>
+              <li>Each participant or team must register before the deadline.</li>
+              <li>Registration fee is applicable only if shortlisted.</li>
+              <li>Our organizers will contact you directly; do not make payments to any unauthorized persons.</li>
+              <li>Both online and offline participation are available.</li>
+              <li>Plagiarism will lead to disqualification.</li>
+              <li>Judges include experts from academia and industry.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section>
+          <h3 class="section-title">Contact</h3>
+          <div class="content-box">
+            <p><strong>📞 Jayanth K:</strong> +91 70106 57075</p>
+            <p><strong>📞 Agarshana:</strong> +91 74186 73435</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

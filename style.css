@@ -1,0 +1,345 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: #000;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+}
+
+/* Section Styles */
+.team-section {
+    margin-bottom: 4rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.team-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.team-section:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.team-section:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/* Hover effects for interactive elements */
+.photo-item {
+    cursor: pointer;
+}
+
+.photo-item:active {
+    transform: translateY(-5px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+} 
+
+/* Photo Grid Styles */
+.photo-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.organizers-grid {
+    grid-template-columns: repeat(auto-fit, 350px);
+}
+
+/* Gallery Grid Styles */
+.gallery-grid {
+    grid-template-columns: repeat(auto-fit, 350px);
+}
+
+/* Desktop: 3 images per row */
+@media (min-width: 769px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile: 1 image per row */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid .photo-item {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid .photo-item {
+        max-width: 300px;
+    }
+}
+
+/* Club-specific photo item styles for wide rectangles */
+.club-grid .photo-item {
+    width: 1000px;  /* Wide rectangle */
+    height: 400px; /* Shorter height for landscape aspect ratio */
+}
+
+.photo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.1);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1.5rem 1rem 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover .photo-overlay {
+    transform: translateY(0);
+}
+
+.photo-overlay h3,
+.photo-overlay h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.photo-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Club Section Styles */
+.club-section {
+    margin-bottom: 3rem;
+}
+
+.club-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.club-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    animation: spin 3s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .club-title {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .photo-item {
+        width: 300px;
+        height: 400px;
+    }
+
+    .organizers-grid,
+    .developers-grid {
+        grid-template-columns: repeat(auto-fit, 300px);
+    }
+
+    /* Club-specific responsive styles */
+    .club-grid {
+        grid-template-columns: repeat(auto-fit, 400px);
+    }
+    
+    .club-grid .photo-item {
+        width: 400px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-item {
+        width: 250px;
+        height: 350px;
+    }
+
+    .organizers-grid,
+    .developers-grid {
+        grid-template-columns: repeat(auto-fit, 250px);
+    }
+
+    /* Club-specific mobile responsive styles */
+    .club-grid {
+        grid-template-columns: repeat(auto-fit, 300px);
+    }
+    
+    .club-grid .photo-item {
+        width: 300px;
+        height: 200px;
+    }
+
+    .photo-overlay {
+        padding: 1rem 0.5rem 0.5rem;
+    }
+
+    .photo-overlay h3,
+    .photo-overlay h4 {
+        font-size: 0.9rem;
+    }
+
+    .photo-overlay p {
+        font-size: 0.8rem;
+    }
+}

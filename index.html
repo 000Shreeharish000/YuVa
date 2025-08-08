@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Standard Favicon -->
+<link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- PNG Icons -->
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/public/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/public/android-chrome-512x512.png">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
+
+<!-- Web Manifest (for PWA or mobile app support) -->
+<link rel="manifest" href="/public/site.webmanifest">
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YUVA Tech Fest 2025</title>
+  <style>
+
+    
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+      
+    .back-button {
+      background: linear-gradient(90deg, #06b6d4, #2563eb);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+      .coming-soon-title {
+        font-size: 2.5rem;
+      }
+      .coming-soon-subtitle {
+        font-size: 1.2rem;
+      }
+    }
+    
+    main {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background: #000;
+      color: #fff;
+    }
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0rem 0rem 0rem 0rem;
+      z-index: 1;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0rem;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .hero-content {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0rem;
+      align-items: center;
+      text-align: center;
+      width: 70%;
+      flex: 1;
+    }
+    @media (min-width: 768px) {
+      .hero-left {
+        align-items: flex-start;
+        text-align: left;
+        width: 70%;
+        flex: 1;
+      }
+    }
+    .yuva-title {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -2px;
+      background: linear-gradient(90deg, #06b6d4, #2563eb, #a21caf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    @media (min-width: 640px) {
+      .yuva-title { font-size: 4rem; }
+    }
+    @media (min-width: 768px) {
+      .yuva-title { font-size: 2rem; }
+    }
+    .hero-fest {
+      font-size: 3.5rem;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+    .hero-fest .tech {
+      color: #06b6d4;
+    }
+    .hero-fest .fest {
+      color: #ef4444;
+    }
+    .hero-desc {
+      color: #94a3b8;
+      max-width: 100%;
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+    }
+    .hero-buttons {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    @media (min-width: 640px) {
+      .hero-buttons { flex-direction: row; }
+    }
+    .btn {
+      position: relative;
+      overflow: hidden;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(90deg, #2563eb, #06b6d4);
+      color: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+      z-index: 1;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #2563eb88;
+    }
+    .btn-secondary {
+      background: none;
+      border: 1px solid #334155;
+      color: #fff;
+    }
+    .btn-secondary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #a21caf, #6366f1);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: -1;
+    }
+    .btn-secondary:hover::after {
+      opacity: 1;
+    }
+    .hero-logo {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .hero-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        perspective: 1200px;
+        flex-shrink: 0;
+      }
+      .logo-3d {
+        width: 700px;
+        height: 700px;
+        border-radius: 0rem;
+        animation: rotateY 15s linear infinite;
+        transform-style: preserve-3d;
+      }
+      @keyframes rotateY {
+        0% { transform: rotateY(0deg); }
+        100% { transform: rotateY(360deg); }
+      }
+    }
+    @media (min-width: 768px) {
+      .logo-3d {
+        width: 700px;
+        height: 700px;
+      }
+    }
+    .scroll-down {
+      position: absolute;
+      left: 50%;
+      bottom: 2.5rem;
+      transform: translateX(-50%);
+      z-index: 10;
+      animation: bounce 2s infinite;
+      color: #6b7280;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-10px); }
+    }
+    /* About Section */
+    #about {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 1rem;
+      background: linear-gradient(to bottom, #000, #111827);
+    }
+    .about-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about-title {
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #fb7185, #fdba74);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      margin-bottom: 2rem;
+    }
+    .about-desc {
+      color: #d1d5db;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+      max-width: 100%;
+      line-height: 1.8;
+    }
+    .about-divider {
+      height: 4px;
+      width: 8rem;
+      margin: 2rem auto 0 auto;
+      background: linear-gradient(90deg, #fb7185, #fdba74);
+      border-radius: 2px;
+      transition: width 1s;
+    }
+    /* Battlegrounds Section */
+    .battlegrounds-section {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, #ef4444 10%, #f59e42 90%);
+      position: relative;
+    }
+    .battlegrounds-container {
+      text-align: center;
+      background: rgba(0,0,0,0.7);
+      padding: 3rem 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    }
+    .battlegrounds-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ef4444, #f59e42, #fde68a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+    .battlegrounds-desc {
+      color: #f3f4f6;
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    /* Clubs Section */
+    .clubs-section {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+      padding: 5rem 0;
+    }
+    .clubs-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      background: linear-gradient(90deg, #f87171, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      margin-bottom: 3rem;
+    }
+    .clubs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      .clubs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (min-width: 1024px) {
+      .clubs-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    .club-card {
+      background: rgba(30,41,59,0.7);
+      border-radius: 1rem;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+    }
+    .club-card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    }
+    .club-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .club-info {
+      padding: 1.5rem;
+    }
+    .club-info h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .club-info p {
+      color: #cbd5e1;
+      margin: 0;
+    }
+    .club-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      align-items: center;
+      justify-content: center;
+    }
+    .club-modal.active {
+      display: flex;
+    }
+    .club-modal-content {
+      background: #1e293b;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      max-width: 90vw;
+      width: 90vw;
+      max-height: 90vh;
+      height: 90vh;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .club-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .club-modal-close:hover {
+      background: rgba(0,0,0,0.6);
+    }
+    /* Events Section */
+    .events-section {
+      min-height: 60vh;
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      padding: 5rem 0;
+    }
+    .events-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      background: linear-gradient(90deg, #fb7185, #fdba74);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+    .events-desc {
+      color: #d1d5db;
+      font-size: 1.25rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .events-gallery-wrapper {
+      overflow: hidden;
+      width: 100%;
+      border-radius: 1rem;
+      background: #111827;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
+    }
+    .events-gallery {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      animation: scrollGallery 30s linear infinite;
+    }
+    .events-gallery img {
+      height: 500px;
+      width: 600px;
+      border-radius: 1rem;
+      object-fit: cover;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.15);
+    }
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .events-gallery {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      animation: scrollGallery 12s linear infinite;
+    }
+
+    /* Registration CTA Section Styles */
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+    .z-0 { z-index: 0; }
+    .z-10 { z-index: 10; }
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .max-w-4xl { max-width: 56rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .overflow-hidden { overflow: hidden; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .border { border-width: 1px; }
+    .border-gray-800 { border-color: #374151; }
+    .bg-black\/60 { background-color: rgba(0, 0, 0, 0.6); }
+    .backdrop-blur-md { backdrop-filter: blur(12px); }
+    
+    /* Enhanced Card Styling */
+    .registration-card {
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 1rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.1);
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .registration-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+    }
+    
+    .registration-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%, rgba(147, 51, 234, 0.1) 100%);
+      pointer-events: none;
+    }
+    .grid { display: grid; }
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .justify-center { justify-content: center; }
+    .p-8 { padding: 2rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+    .text-5xl { font-size: 3rem; line-height: 1; }
+    .font-bold { font-weight: 700; }
+    .font-black { font-weight: 900; }
+    .text-white { color: #ffffff; }
+    .text-gray-400 { color: #9ca3af; }
+    .text-gray-300 { color: #d1d5db; }
+    .text-blue-400 { color: #60a5fa; }
+    .flex-wrap { flex-wrap: wrap; }
+    .gap-4 { gap: 1rem; }
+    .group { position: relative; }
+    .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+    .from-red-600 { --tw-gradient-from: #dc2626; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(220, 38, 38, 0)); }
+    .to-pink-500 { --tw-gradient-to: #ec4899; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    .font-medium { font-weight: 500; }
+    .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+    .duration-300 { transition-duration: 300ms; }
+    .hover\:shadow-\[0_0_20px_rgba\(239\,68\,68\,0\.5\)\]:hover { box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+    .hover\:shadow-\[0_0_20px_rgba\(59\,130\,246\,0\.5\)\]:hover { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+    .translate-y-full { transform: translateY(100%); }
+    .from-blue-600 { --tw-gradient-from: #2563eb; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(37, 99, 235, 0)); }
+    .to-cyan-500 { --tw-gradient-to: #06b6d4; }
+    .opacity-0 { opacity: 0; }
+    .group-hover\:translate-y-0:hover { transform: translateY(0); }
+    .group-hover\:opacity-100:hover { opacity: 1; }
+    .border-gray-700 { border-color: #374151; }
+    .bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
+    .backdrop-blur-sm { backdrop-filter: blur(4px); }
+    .hover\:border-cyan-500:hover { border-color: #06b6d4; }
+    .hover\:text-cyan-400:hover { color: #22d3ee; }
+    .hidden { display: none; }
+    .md\:block { display: block; }
+    .from-blue-600\/20 { --tw-gradient-from: rgba(37, 99, 235, 0.2); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(37, 99, 235, 0)); }
+    .to-purple-600\/20 { --tw-gradient-to: rgba(147, 51, 234, 0.2); }
+    .mix-blend-overlay { mix-blend-mode: overlay; }
+    .object-cover { object-fit: cover; }
+
+    /* Footer Styles */
+    .bg-black { background-color: #000000; }
+    .text-white { color: #ffffff; }
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .gap-12 { gap: 3rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+    .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+    .from-blue-400 { --tw-gradient-from: #60a5fa; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(96, 165, 250, 0)); }
+    .to-purple-400 { --tw-gradient-to: #c084fc; }
+    .bg-clip-text { background-clip: text; }
+    .text-transparent { color: transparent; }
+    .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+    .space-y-2 > * + * { margin-top: 0.5rem; }
+    .hover\:text-white:hover { color: #ffffff; }
+    .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+    .items-center { align-items: center; }
+    .space-x-2 > * + * { margin-left: 0.5rem; }
+    .w-5 { width: 1.25rem; }
+    .h-5 { height: 1.25rem; }
+    .fill-none { fill: none; }
+    .stroke-currentColor { stroke: currentColor; }
+    .stroke-linecap-round { stroke-linecap: round; }
+    .stroke-linejoin-round { stroke-linejoin: round; }
+    .stroke-width-2 { stroke-width: 2; }
+    .flex-col { flex-direction: column; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mr-2 { margin-right: 0.5rem; }
+    .space-x-4 > * + * { margin-left: 1rem; }
+    .w-6 { width: 1.5rem; }
+    .h-6 { height: 1.5rem; }
+    .fill-currentColor { fill: currentColor; }
+    .mt-12 { margin-top: 3rem; }
+    .pt-8 { padding-top: 2rem; }
+    .border-t { border-top-width: 1px; }
+    .border-gray-800 { border-color: #374151; }
+    .flex-row { flex-direction: row; }
+    .justify-between { justify-content: space-between; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .md\:space-y-0 { margin-top: 0; }
+    .space-x-6 > * + * { margin-left: 1.5rem; }
+    .no-underline { text-decoration: none; }
+    
+    /* Navigation Styles */
+    .fixed { position: fixed; }
+    .top-0 { top: 0; }
+    .left-0 { left: 0; }
+    .right-0 { right: 0; }
+    .z-50 { z-index: 50; }
+    .p-6 { padding: 1.5rem; }
+    .space-x-6 > * + * { margin-left: 1.5rem; }
+    .underline { text-decoration: underline; }
+    .hover\:text-gray-300:hover { color: #d1d5db; }
+    .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+    
+    /* Smaller Bottom Bar */
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(55, 65, 81, 0.5);
+      font-size: 0.875rem;
+    }
+    
+    .footer-bottom .text-gray-400 {
+      font-size: 0.875rem;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .md\:block { display: block; }
+      .md\:flex-row { flex-direction: row; }
+      .md\:space-y-0 { margin-top: 0; }
+    }
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 767px) {
+
+      /* Hero Section */
+      .hero-section {
+        padding: 2rem 1rem !important;
+        min-height: 100vh !important;
+        justify-content: flex-start !important;
+        padding-top: 6rem !important;
+      }
+      .hero-content {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        text-align: center !important;
+        width: 100% !important;
+      }
+      .hero-left {
+        width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-right: 0 !important;
+        position: relative !important;
+      }
+      .hero-left img[src*="YUVA MAIN WORD.png"] {
+        width: 250px !important;
+        max-width: 80% !important;
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        margin: 0 auto 1rem auto !important;
+        display: block !important;
+      }
+      .yuva-title {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+      }
+      .hero-fest {
+        font-size: 2.5rem !important;
+        margin-left: 0 !important;
+        text-align: center !important;
+      }
+      .hero-desc {
+        font-size: 1.125rem !important;
+        line-height: 1.6rem !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin: 1rem 0 !important;
+      }
+      #countdown {
+        font-size: 1.5rem !important;
+        gap: 0.25rem !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+      }
+      .hero-logo {
+        display: none !important;
+      }
+      .scroll-down {
+        bottom: 1rem !important;
+      }
+
+      /* About Section */
+      #about {
+        padding: 3rem 1rem !important;
+        overflow: hidden !important;
+      }
+      .about-container {
+        position: relative !important;
+        z-index: 10 !important;
+      }
+      .about-title {
+        font-size: 2rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .about-desc {
+        font-size: 1.125rem !important;
+        line-height: 1.6rem !important;
+        margin-bottom: 1rem !important;
+      }
+      /* Red decorative elements - make smaller for mobile */
+      #about > div:first-child {
+        width: 200px !important;
+        height: 150px !important;
+        top: -75px !important;
+        left: -100px !important;
+        opacity: 0.6 !important;
+      }
+      #about > div:last-child {
+        width: 150px !important;
+        height: 150px !important;
+        bottom: -75px !important;
+        right: -75px !important;
+        opacity: 0.6 !important;
+      }
+
+      /* Breakthrough Battlegrounds Section */
+      .text-4xl {
+        font-size: 2rem !important;
+      }
+      .text-6xl {
+        font-size: 3rem !important;
+      }
+      .text-xl {
+        font-size: 1.125rem !important;
+      }
+
+      /* Technical Clubs Section */
+      .clubs-section {
+        padding: 3rem 1rem !important;
+      }
+      .clubs-title {
+        font-size: 2rem !important;
+        margin-bottom: 2rem !important;
+      }
+      .clubs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      /* Events Section */
+      .events-section {
+        padding: 3rem 1rem !important;
+      }
+      .events-title {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+      }
+      .events-desc {
+        font-size: 1rem !important;
+        margin-bottom: 2rem !important;
+      }
+      .events-gallery img {
+        height: 300px !important;
+        width: 350px !important;
+      }
+
+      /* Registration CTA Section */
+      .registration-card {
+        margin: 0 1rem !important;
+      }
+      .text-5xl {
+        font-size: 2.5rem !important;
+      }
+      .text-xl {
+        font-size: 1.125rem !important;
+      }
+      
+      /* Registration CTA Grid Layout - Stack vertically on mobile */
+      .registration-card .grid.md\\:grid-cols-2 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+      }
+      
+      /* Alternative selector for grid container */
+      .registration-card > div > div {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+      }
+      
+      /* Force the grid to be flex on mobile */
+      .registration-card .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+      }
+      
+      /* Text section - Take full width on mobile */
+      .registration-card .flex.flex-col.justify-center.p-8 {
+        width: 100% !important;
+        text-align: center !important;
+        order: 1 !important;
+      }
+      
+      /* Spinning Logo - Show below on mobile */
+      .registration-card .relative.hidden.md\\:block {
+        display: block !important;
+        position: relative !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+        order: 2 !important;
+        width: 100% !important;
+      }
+      
+      /* Override hidden class specifically */
+      .registration-card .hidden {
+        display: block !important;
+      }
+      .registration-card .logo-3d {
+        width: 200px !important;
+        height: 200px !important;
+        margin: 0 auto !important;
+        display: block !important;
+        animation: rotateY 15s linear infinite !important;
+      }
+
+      /* Footer */
+      .footer-bottom {
+        text-align: center !important;
+      }
+      .footer-bottom .flex {
+        flex-direction: column !important;
+        gap: 1rem !important;
+      }
+
+      /* General mobile adjustments */
+      .container {
+        padding: 0 1rem !important;
+      }
+      .text-2xl {
+        font-size: 1.5rem !important;
+      }
+      .hero-logo {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 1.5rem 0 0 0 !important;
+      }
+      .hero-logo img,
+      .logo-3d {
+        width: 70vw !important;
+        height: auto !important;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    /* Small Mobile Devices */
+    @media (max-width: 480px) {
+
+      .hero-section {
+        padding: 1rem 0.5rem !important;
+        padding-top: 5rem !important;
+      }
+      .hero-left img[src*="YUVA MAIN WORD.png"] {
+        width: 200px !important;
+      }
+      .yuva-title {
+        font-size: 1.75rem !important;
+      }
+      .hero-fest {
+        font-size: 2rem !important;
+      }
+      .hero-desc {
+        font-size: 1rem !important;
+        line-height: 1.5rem !important;
+      }
+      #countdown {
+        font-size: 1.25rem !important;
+      }
+      .about-title {
+        font-size: 1.75rem !important;
+      }
+      .about-desc {
+        font-size: 1rem !important;
+        line-height: 1.5rem !important;
+      }
+      /* Even smaller decorative elements */
+      #about > div:first-child {
+        width: 150px !important;
+        height: 100px !important;
+        top: -50px !important;
+        left: -75px !important;
+      }
+      #about > div:last-child {
+        width: 100px !important;
+        height: 100px !important;
+        bottom: -50px !important;
+        right: -50px !important;
+      }
+      .text-4xl {
+        font-size: 1.75rem !important;
+      }
+      .text-6xl {
+        font-size: 2.5rem !important;
+      }
+      .clubs-title, .events-title {
+        font-size: 1.75rem !important;
+      }
+      .text-5xl {
+        font-size: 2rem !important;
+      }
+      
+      /* Spinning Logo - Even smaller for small mobile */
+      .registration-card .logo-3d {
+        width: 150px !important;
+        height: 150px !important;
+      }
+    }
+
+    /* Landscape Mobile */
+    @media (max-width: 767px) and (orientation: landscape) {
+      .hero-section {
+        padding-top: 4rem !important;
+        min-height: 100vh !important;
+      }
+      .hero-left img[src*="YUVA MAIN WORD.png"] {
+        width: 180px !important;
+      }
+      .yuva-title {
+        font-size: 1.5rem !important;
+      }
+      .hero-fest {
+        font-size: 2rem !important;
+      }
+      .hero-desc {
+        font-size: 1rem !important;
+        line-height: 1.4rem !important;
+      }
+    }
+
+    /* Breakthrough Battlegrounds Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .absolute {
+        position: absolute;
+    }
+
+    .inset-0 {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .z-0 {
+        z-index: 0;
+    }
+
+    .z-10 {
+        z-index: 10;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .h-full {
+        height: 100%;
+    }
+
+    .object-cover {
+        object-fit: cover;
+    }
+
+    .opacity-80 {
+        opacity: 0.8;
+    }
+
+    .bg-black\/30 {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .py-20 {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .container {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .grid {
+        display: grid;
+    }
+
+    .grid-cols-1 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .gap-8 {
+        gap: 2rem;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+
+    .text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .text-6xl {
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+
+    .text-7xl {
+        font-size: 4.5rem;
+        line-height: 1;
+    }
+
+    .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .font-bold {
+        font-weight: 700;
+    }
+
+    .text-gray-300 {
+        color: #d1d5db;
+    }
+
+    .text-white {
+        color: #fff;
+    }
+
+    .mb-4 {
+        margin-bottom: 1rem;
+    }
+
+    .space-y-8 > * + * {
+        margin-top: 2rem;
+    }
+
+    .max-w-3xl {
+        max-width: 48rem;
+    }
+
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .leading-relaxed {
+        line-height: 1.625;
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .blur-3xl {
+        filter: blur(64px);
+    }
+
+    /* Gradient text effects */
+    .gradient-text-stats {
+        background: linear-gradient(to right, #fb7185, #fdba74);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .gradient-text-breakthrough {
+        background: linear-gradient(to right, #ef4444, #f97316, #eab308);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .gradient-bg-glow {
+        background: linear-gradient(to right, rgba(239, 68, 68, 0.1), rgba(249, 115, 22, 0.1), rgba(234, 179, 8, 0.1));
+    }
+
+    /* Animations */
+    .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scaleGlow {
+        0%, 100% {
+            transform: scale(1);
+            text-shadow: none;
+        }
+        50% {
+            transform: scale(1.2);
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+    }
+
+    .fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+
+    .delay-200 {
+        animation-delay: 0.2s;
+    }
+
+    .delay-400 {
+        animation-delay: 0.4s;
+    }
+
+    .scale-glow {
+        animation: scaleGlow 0.5s ease-in-out 2;
+    }
+
+    /* Responsive design */
+    @media (min-width: 768px) {
+        .grid-cols-1 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        
+        .text-4xl {
+            font-size: 3rem;
+            line-height: 1;
+        }
+        
+        .text-6xl {
+            font-size: 4.5rem;
+            line-height: 1;
+        }
+        
+        .text-xl {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+ /* Default styles for large screens (desktop-first approach) */
+#nav-desktop {
+ display: flex;
+ width: 100%;
+ justify-content: flex-end;
+}
+
+#nav-mobile {
+ display: none;
+}
+
+/* Add a class to hide the main links on mobile, if necessary */
+.nav-desktop-links {
+ display: flex;
+ justify-content: flex-end;
+ gap: 1.5rem;
+ padding: 1rem 2.5rem 1rem 1rem;
+ margin-left: auto;
+}
+
+/* Mobile-specific styles */
+.nav-mobile-container {
+ /* Set layout for the hamburger icon and mobile menu */
+ display: flex;
+ justify-content: flex-end;
+ padding: 1rem 2.5rem 1rem 1rem;
+}
+
+.hamburger {
+ display: flex;
+ flex-direction: column;
+ cursor: pointer;
+ gap: 4px;
+}
+
+.hamburger span {
+ width: 25px;
+ height: 3px;
+ background-color: white;
+ transition: 0.3s;
+}
+
+.mobile-menu {
+ position: absolute;
+ top: 100%;
+ right: 0;
+ background-color: rgba(0, 0, 0, 0.95);
+ min-width: 200px;
+ display: none;
+ flex-direction: column;
+}
+
+.mobile-menu.active {
+ display: flex;
+}
+
+.mobile-menu a {
+ display: block;
+ padding: 1rem 1.5rem;
+ color: #9CA3AF;
+ text-decoration: none;
+ border-bottom: 1px solid #374151;
+ transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+ color: white;
+ background-color: rgba(55, 65, 81, 0.8);
+}
+
+/* Media query to swap the navigation bars */
+@media (max-width: 768px) {
+ #nav-desktop {
+   display: none; /* Hides the desktop navigation */
+ }
+
+ #nav-mobile {
+   display: block; /* Shows the mobile navigation */
+ }
+}
+ /* Intersection Observer visibility */
+    .invisible {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    .visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    @media (max-width: 767px) {
+      .logo-3d {
+        animation: rotateY 15s linear infinite !important;
+        transform-style: preserve-3d !important;
+      }
+      @keyframes rotateY {
+        0% { transform: rotateY(0deg); }
+        100% { transform: rotateY(360deg); }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        font-size: 0.8rem;
+      }
+    }
+
+    .clubs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .club-card {
+      background: #1f2937;
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .club-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .club-thumb {
+      height: 220px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #0f172a;
+    }
+
+    .club-info {
+      padding: 1rem;
+      color: #fff;
+    }
+
+    .club-info h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .club-info p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav id="nav-desktop" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <div class="flex justify-end space-x-6 p-4 pr-10">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="events.html" class="nav-link">Events</a>
+    <a href="team.html" class="nav-link">Team</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="#" onclick="alert('Coming Soon'); return false;" class="nav-link">Login</a>
+  </div>
+</nav>
+
+<nav id="nav-mobile" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <div class="nav-mobile-container">
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#" onclick="alert('Coming Soon'); return false;">Login</a>
+    </div>
+  </div>
+</nav>
+  <main>
+    <section class="hero-section" id="home">
+      <div class="container hero-content">
+                        <div class="hero-left" style="margin-right: 1in; position: relative;">
+            <img src="public/yuva_logo_main.png" alt="YUVA Word Logo" style="width:500px;max-width:100%;position:absolute;top:-0.2in;left:0;background:none;border:none;box-shadow:none;padding:0;z-index:10;margin-top:-3.0in;margin-left:-0.2in;">
+            <div class="hero-fest" style="margin-left: 0.3in;"><span class="tech">TECH</span> <span class="fest">FEST</span> 2025</div>
+            <p class="hero-desc" style="margin-left: 2rem;">
+              YUVA'25: The Ultimate Tech Mission. Elite developers, designers, and innovators converge at SRM University this September 2025 to solve tomorrow's challenges today.
+            </p>
+          <div style="margin: 1.5rem 0;margin-left: 2rem;">
+            <h3 style="font-size: 1.5rem; font-weight: bold; color: #06b6d4; margin-bottom: 1rem;">BATTLE STARTS IN:</h3>
+            <div id="countdown" style="display: flex; gap: 0.5rem; font-size: 2rem; font-weight: bold; color: #06b6d4;"></div>
+          </div>
+
+        </div>
+        <div class="hero-logo">
+          <img src="public/YUVA SYMBOL1.png" alt="YUVA Logo" class="logo-3d" />
+        </div>
+      </div>
+      <div class="scroll-down">
+        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+      </div>
+    </section>
+    <section id="about" class="about-section" style="position: relative;">
+      <div style="position: absolute; width: 540px; height: 390px; background-color: #930000; transform: rotateX(-333.09deg) rotateY(-326.96deg); top: -160px; left: -320px; z-index: 1;"></div>
+      <div class="about-container">
+        <div class="about-title">ABOUT YUVA</div>
+        <div class="about-desc">YUVA is SRM University's flagship technology festival, where innovation meets excellence.</div>
+        <div class="about-desc">A premier platform where tech enthusiasts engage in competitive innovation challenges, creating an environment where cutting-edge technology meets strategic competition.</div>
+        <div class="about-desc">Join us for three days of intense competition, learning, and networking with the brightest minds in technology.</div>
+        <div class="about-divider"></div>
+      </div>
+      <div style="position: absolute; width: 400px; height: 400px; background-color: #930000; border-radius: 50%; bottom: -0.1in; right: -250px; z-index: 1;"></div>
+    </section>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakthrough Battlegrounds</title>
+</head>
+<body>
+    <div class="relative">
+        <!-- Single Video Background -->
+        <div class="absolute inset-0 z-0">
+            <video
+                autoplay
+                loop
+                muted
+                playsinline
+                class="w-full h-full object-cover opacity-80"
+            >
+                <source src="public/Theme-video.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        <!-- Stats Section -->
+        <section class="relative py-20 bg-black/30 overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="grid grid-cols-1 gap-8 items-center">
+                    <!-- Events Count -->
+                    <div class="text-center invisible" id="events-stat">
+                        <h3 class="text-4xl font-bold gradient-text-stats mb-4" id="events-count">
+                            0+
+                        </h3>
+                        <p class="text-2xl text-gray-300">Events</p>
+                    </div>
+
+                    <!-- Footfall Count -->
+                    <div class="text-center invisible" id="footfall-stat">
+                        <h3 class="text-4xl font-bold gradient-text-stats mb-4" id="footfall-count">
+                            0+
+                        </h3>
+                        <p class="text-2xl text-gray-300">Footfall</p>
+                    </div>
+
+                    <!-- National Level -->
+                    <div class="text-center invisible" id="national-stat">
+                        <h3 class="text-4xl font-bold gradient-text-stats mb-4" id="national-text">
+                            <span class="inline-block animate-pulse">|</span>
+                        </h3>
+                        <p class="text-2xl text-gray-300">Level Event</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theme Breakthrough Section -->
+        <section class="relative py-20 bg-black/30 overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center space-y-8 invisible" id="breakthrough-section">
+                    <h2 class="text-6xl font-bold gradient-text-breakthrough">
+                        BREAKTHROUGH
+                    </h2>
+                    <div class="relative">
+                        <div class="absolute inset-0 gradient-bg-glow blur-3xl"></div>
+                        <h3 class="text-4xl font-bold text-white relative z-10">
+                            BATTLEGROUNDS
+                        </h3>
+                    </div>
+                    <div class="max-w-3xl mx-auto">
+                        <p class="text-xl text-gray-300 leading-relaxed">
+                            Where innovation meets competition. Push your limits, break boundaries, and emerge victorious in the ultimate tech battleground.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Counter animation for events
+        let eventCount = 0;
+        const targetEventCount = 50; // Adjust this value as needed
+        
+        // Nav Bar JS logic 
+        function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileMenu.classList.toggle('active');
+}
+
+document.addEventListener('click', function(event) {
+  const nav = document.getElementById('navbar');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  if (!nav.contains(event.target)) {
+    mobileMenu.classList.remove('active');
+  }
+});
+
+        // Counter animation for footfall
+        let footfallCount = 0;
+        const targetFootfallCount = 10000;
+        
+        // Typewriter effect for national text
+        let nationalIndex = 0;
+        const nationalWords = ["NATIONAL"];
+        let currentNationalWord = "";
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('invisible');
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger specific animations based on element
+                    if (entry.target.id === 'events-stat') {
+                        animateEventCount();
+                    } else if (entry.target.id === 'footfall-stat') {
+                        setTimeout(() => animateFootfallCount(), 200);
+                    } else if (entry.target.id === 'national-stat') {
+                        setTimeout(() => animateNationalText(), 400);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.invisible').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Event count animation
+        function animateEventCount() {
+            const eventElement = document.getElementById('events-count');
+            let currentEvent = 0; // Reset to 0 each time the animation runs
+            const interval = setInterval(() => {
+                currentEvent++;
+                eventElement.textContent = currentEvent + '+';
+                
+                if (currentEvent >= targetEventCount) {
+                    clearInterval(interval);
+                }
+            }, 30);
+        }
+
+        // Footfall count animation
+        function animateFootfallCount() {
+            const footfallElement = document.getElementById('footfall-count');
+            let currentFootfall = 0; // Reset to 0 each time the animation runs
+            const interval = setInterval(() => {
+                currentFootfall += 100;
+                footfallElement.textContent = currentFootfall.toLocaleString() + '+';
+                
+                if (currentFootfall >= targetFootfallCount) {
+                    clearInterval(interval);
+                    // Add scale and glow effect when reaching target
+                    footfallElement.classList.add('scale-glow');
+                    setTimeout(() => {
+                        footfallElement.classList.remove('scale-glow');
+                    }, 1000);
+                }
+            }, 20);
+        }
+
+        // National text typewriter animation
+        function animateNationalText() {
+            const nationalElement = document.getElementById('national-text');
+            const word = nationalWords[0];
+            let currentNationalWord = ""; // Reset the word each time
+            let currentNationalIndex = 0; // Reset the index each time
+            
+            function typeWriter() {
+                if (currentNationalIndex < word.length) {
+                    currentNationalWord += word.charAt(currentNationalIndex);
+                    nationalElement.innerHTML = currentNationalWord + '<span class="inline-block animate-pulse">|</span>';
+                    currentNationalIndex++;
+                    setTimeout(typeWriter, 100);
+                } else {
+                    // Remove cursor after completion
+                    setTimeout(() => {
+                        nationalElement.innerHTML = currentNationalWord;
+                    }, 1000);
+                }
+            }
+            
+            typeWriter();
+        }
+
+        // Ensure video plays on mobile devices
+        window.addEventListener('load', () => {
+            const video = document.querySelector('video');
+            if (video) {
+                video.play().catch(e => {
+                    console.log('Video autoplay failed:', e);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- Registration CTA Section -->
+    <section class="relative py-20" style="background: linear-gradient(to bottom, #000, #111827);">
+      <div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-blue-950/20"></div>
+      <div class="container relative z-10 mx-auto max-w-4xl px-4">
+        <div class="registration-card">
+          <div class="grid md:grid-cols-2">
+            <div class="flex flex-col justify-center p-8">
+              <h2 class="mb-4 text-5xl font-black text-white">
+                JOIN THE BATTLE
+              </h2>
+              <p class="mb-6 text-xl font-bold text-gray-300">
+                Register for events to secure your place in the YUVA Tech Fest.
+                Limited slots available for each battle event.
+              </p>
+                              <div class="flex flex-wrap gap-4 justify-center">
+                  <a href="events.html" class="group relative overflow-hidden rounded-md bg-gradient-to-r from-red-600 to-pink-500 px-6 py-3 font-medium text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(239,68,68,0.5)] no-underline">
+    <span class="relative z-10">EXPLORE EVENTS</span>
+    <span class="absolute inset-0 z-0 translate-y-full bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"></span>
+</a>
+
+                </div>
+            </div>
+            <div class="relative hidden md:block">
+              <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 mix-blend-overlay"></div>
+              <img src="public/YUVA SYMBOL1.png" alt="Tech warrior" class="h-full w-full object-cover logo-3d">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Technical Clubs Section -->
+    <section id="events" class="clubs-section" style="background: linear-gradient(to bottom, #000, #111827);">
+      <div class="container">
+        <h2 class="clubs-title">Technical Clubs</h2>
+        <div class="clubs-grid">
+          <!-- Club Cards -->
+          <div class="club-card" data-name="CYBERANZEN" data-image="public/Cyberanzen.png" data-desc="Cyber Security">
+            <div class="club-thumb" style="background-image:url('public/Cyberanzen.png')"></div>
+            <div class="club-info">
+              <h3>CYBERANZEN</h3>
+              <p>Cyber Security</p>
+            </div>
+          </div>
+          <div class="club-card" data-name="Robo Thinkers" data-image="public/Robothinkers.png" data-desc="Building the future">
+            <div class="club-thumb" style="background-image:url('public/Robothinkers.png')"></div>
+            <div class="club-info">
+              <h3>Robo Thinkers</h3>
+              <p>Building the future</p>
+            </div>
+          </div>
+          <div class="club-card" data-name="Neuro Tech Titans" data-image="public/NEURO TECH TITANS.png" data-desc="Exploring artificial intelligence">
+            <div class="club-thumb" style="background-image:url('public/NEURO TECH TITANS.png')"></div>
+            <div class="club-info">
+              <h3>Neuro Tech Titans</h3>
+              <p>Exploring artificial intelligence</p>
+            </div>
+          </div>
+          <div class="club-card" data-name="Arcana" data-image="public/ARCANA.png" data-desc="Creating History in Bio-Tech">
+            <div class="club-thumb" style="background-image:url('public/ARCANA.png')"></div>
+            <div class="club-info">
+              <h3>Arcana</h3>
+              <p>Creating History in Bio-Tech</p>
+            </div>
+          </div>
+          <div class="club-card" data-name="Aeroinnovators" data-image="public/Aeroinnovators.PNG" data-desc="Drones and Technology">
+            <div class="club-thumb" style="background-image:url('public/Aeroinnovators.PNG')"></div>
+            <div class="club-info">
+              <h3>Aeroinnovators</h3>
+              <p>Drones and Technology</p>
+            </div>
+          </div>
+          <div class="club-card" data-name="Silicon Synergy" data-image="public/Silicon synergy.png" data-desc="Play with Electronics">
+            <div class="club-thumb" style="background-image:url('public/Silicon synergy.png')"></div>
+            <div class="club-info">
+              <h3>Silicon Synergy</h3>
+              <p>Play with Electronics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Club Modal -->
+      <div id="clubModal" class="club-modal">
+        <div class="club-modal-content">
+          <span class="club-modal-close">&times;</span>
+          <img id="clubModalImage" style="width:100%;height:80vh;border-radius:1rem;object-fit:contain;margin-bottom:1rem;">
+          <h3 id="clubModalName"></h3>
+          <p id="clubModalDesc"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Events Section -->
+    <section id="gallery" class="events-section" style="background: linear-gradient(to bottom, #000, #111827);">
+      <div class="container">
+        <h2 class="events-title">PAST EVENTS</h2>
+        <p class="events-desc">Relive the moments of innovation, creativity, and technological excellence from our previous editions</p>
+        <div class="events-gallery-wrapper">
+          <div class="events-gallery" id="eventsGallery">
+            <img src="public/coding-bg2.JPG" alt="Event 2">
+            <img src="public/coding-bg3.JPG" alt="Event 3">
+            <img src="public/coding-bg4.JPG" alt="Event 4">
+            <img src="public/coding-bg5.jpg" alt="Event 5">
+            <img src="public/coding-bg6.JPG" alt="Event 6">
+            <img src="public/coding-bg7.JPG" alt="Event 7">
+            <img src="public/coding-bg8.JPG" alt="Event 8">
+            <img src="public/coding-bg9.JPG" alt="Event 9">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id = "footer" class="relative bg-black text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <!-- About Section -->
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              YUVA Tech Fest
+            </h3>
+            <p class="text-gray-400">
+              SRM University's flagship technology festival, bringing together the brightest minds in technology.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="events.html" class="text-gray-400 hover:text-white transition-colors">
+                  Events
+                </a>
+              </li>
+              <li>
+                <a href="team.html" class="text-gray-400 hover:text-white transition-colors">
+                  Team
+                </a>
+              </li>
+              <li>
+                <a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">
+                  Gallery
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white">Contact Us</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <a href="https://maps.app.goo.gl/4QAzmHvij3y7bjss9" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                  SRM University, Tiruchirappalli
+                </a>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:technicalclubs@ist.srmtrichy.edu.in" class="hover:underline" target="_blank">technicalclubs@ist.srmtrichy.edu.in</a>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="flex flex-col">
+                  <div class="flex items-center mb-2">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href="tel:9585253883" class="hover:underline">9585253883</a>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href="tel:7010657075" class="hover:underline">7010657075</a>
+                    </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white">Follow Us</h3>
+            <div class="flex space-x-4">
+              <!-- <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a> -->
+              <!-- <a href="https://www.instagram.com/yuva_srm/#" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a> -->
+              <a href="https://www.instagram.com/yuva_srm/#" target="_blank"  class="text-gray-400 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                </svg>
+              </a>
+              <!--
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+          <div class="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+            <p class="text-gray-400">
+              © 2025 Yuva Tech Fest. All rights reserved.
+            </p>
+            <div class="flex space-x-4">
+              <button onclick="showComingSoon('Privacy Policy')" class="text-gray-400 hover:text-white transition-colors">
+                Privacy Policy
+              </button>
+              <button onclick="showComingSoon('Terms of Service')" class="text-gray-400 hover:text-white transition-colors">
+                Terms of Service
+              </button>
+              <button onclick="showComingSoon('Campus Map')" class="text-gray-400 hover:text-white transition-colors">
+                Campus Map
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </footer>
+  </main>
+  <script>
+    // Countdown Timer
+    function updateCountdown() {
+      const target = new Date('2025-09-15T00:00:00');
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<div style="background: #000; border: 2px solid #fff; border-radius: 0.5rem; padding: 1rem; min-width: 80px; text-align: center; color: #fff; font-size: 2rem; font-weight: bold;">Event Started!</div>';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      
+      document.getElementById('countdown').innerHTML = `
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="background: #000; border: 2px solid #fff; border-radius: 0.5rem; padding: 1rem; min-width: 80px; text-align: center; color: #fff; font-size: 2rem; font-weight: bold;">${days}</div>
+          <div style="color: #fff; font-size: 0.875rem; margin-top: 0.5rem;">DAYS</div>
+        </div>
+        <div style="font-size: 2rem; font-weight: bold; color: #fff; display: flex; align-items: center; padding: 0 0.5rem;">:</div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="background: #000; border: 2px solid #fff; border-radius: 0.5rem; padding: 1rem; min-width: 80px; text-align: center; color: #fff; font-size: 2rem; font-weight: bold;">${hours}</div>
+          <div style="color: #fff; font-size: 0.875rem; margin-top: 0.5rem;">HOURS</div>
+        </div>
+        <div style="font-size: 2rem; font-weight: bold; color: #fff; display: flex; align-items: center; padding: 0 0.5rem;">:</div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="background: #000; border: 2px solid #fff; border-radius: 0.5rem; padding: 1rem; min-width: 80px; text-align: center; color: #fff; font-size: 2rem; font-weight: bold;">${minutes}</div>
+          <div style="color: #fff; font-size: 0.875rem; margin-top: 0.5rem;">MINUTES</div>
+        </div>
+        <div style="font-size: 2rem; font-weight: bold; color: #fff; display: flex; align-items: center; padding: 0 0.5rem;">:</div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="background: #000; border: 2px solid #fff; border-radius: 0.5rem; padding: 1rem; min-width: 80px; text-align: center; color: #fff; font-size: 2rem; font-weight: bold;">${seconds}</div>
+          <div style="color: #fff; font-size: 0.875rem; margin-top: 0.5rem;">SECONDS</div>
+        </div>
+      `;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Smooth scroll to About
+    document.getElementById('aboutBtn').addEventListener('click', function() {
+      document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    });
+    // Scroll down arrow
+    document.querySelector('.scroll-down').addEventListener('click', function() {
+      document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    });
+    // Login button (redirect placeholder)
+    document.getElementById('loginBtn').addEventListener('click', function() {
+      window.location.href = '/login';
+    });
+  </script>
+  <script>
+// Club Modal Logic
+const clubCards = document.querySelectorAll('.club-card');
+const clubModal = document.getElementById('clubModal');
+const clubModalImage = document.getElementById('clubModalImage');
+const clubModalName = document.getElementById('clubModalName');
+const clubModalDesc = document.getElementById('clubModalDesc');
+const clubModalClose = document.querySelector('.club-modal-close');
+clubCards.forEach(card => {
+  card.addEventListener('click', () => {
+    clubModal.classList.add('active');
+    clubModalImage.src = card.getAttribute('data-image');
+    clubModalName.textContent = card.getAttribute('data-name');
+    clubModalDesc.textContent = card.getAttribute('data-desc');
+  });
+});
+clubModalClose.addEventListener('click', () => {
+  clubModal.classList.remove('active');
+  clubModalImage.src = '';
+});
+clubModal.addEventListener('click', (e) => {
+  if (e.target === clubModal) {
+    clubModal.classList.remove('active');
+    clubModalImage.src = '';
+  }
+});
+// Duplicate gallery images for infinite scroll effect
+const gallery = document.getElementById('eventsGallery');
+if (gallery) {
+  gallery.innerHTML += gallery.innerHTML;
+}
+
+
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    navbar.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-md', 'shadow-md');
+  } else {
+    navbar.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-md', 'shadow-md');
+  }
+});
+
+function showComingSoon(section) {
+  alert(`${section} section is coming soon!`);
+}
+
+</script>
+</body>
+</html>
